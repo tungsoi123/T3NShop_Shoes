@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Project.css">
+    <meta charset="utf-8" />
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./vendor/js/Magnific-Popup-master/magnific-popup.css" />
+    <script src="https://kit.fontawesome.com/54a12c09af.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        }
+        
+        #head {
+            width: 100%;
+            height: 30px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #afterhead {
+            width: 100%;
+            height: 120px;
+            border-bottom: #989898 solid 2px;
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            width: 100%;
+            height: 480px;
+            background-image: url(https://static.wixstatic.com/media/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.jpg/v1/fill/w_1899,h_743,al_c,q_85,usm_0.66_1.00_0.01/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.webp);
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        footer .footer-content {
+            padding: 85px 0 70px 0;
+            border-bottom: 1px solid #2e2c2f;
+        }
+        
+        footer .sub-heading {
+            font-size: 20px;
+            line-height: 36px;
+            color: #aaa;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .slogan {
+            color: #aaa;
+            line-height: 34px;
+            font-size: 18px;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .footer-social {
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+        
+        footer .social-media:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+        footer .social-popup-icon {
+            color: #fff;
+        }
+        
+        footer .footer-bottom {
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            color: #aaa;
+        }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100px;
+            background: #FFFFFF;
+            z-index: 12;
+        }
+        
+        @media all and (max-width: 1500px) {
+            body {
+                width: 1500px;
+            }
+            .navbar {
+                width: 1500px;
+            }
+        }
+        
+        @media all and (max-width: 1000px) {
+            body {
+                width: 1200px;
+            }
+            .navbar {
+                width: 1200px;
+            }
+            #head {
+                font-size: 10px;
+            }
+        }
+        
+        .nav {
+            padding: 3px 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .brand-logo {
+            height: 60px;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search {
+            width: 500px;
+            display: flex;
+        }
+        
+        .search-box {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #d1d1d1;
+            text-transform: capitalize;
+            background: none;
+            color: #a9a9a9;
+            outline: none;
+        }
+        
+        .search-btn {
+            width: 20%;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #383838;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 15px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .search-box::placeholder {
+            color: #a9a9a9;
+        }
+        
+        .nav-items a {
+            margin-left: 20px;
+        }
+        
+        .nav-items a img {
+            width: 30px;
+        }
+        
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 7px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+        
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: 0.5s;
+            font-size: 15px;
+        }
+        
+        .link:hover {
+            opacity: 1;
+        }
+    </style>
+    <script src="Project.js">
+    </script>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            createAdmin();
+            hideTK();
+        }
+    </script>
+    <form>
+        <div id="logbox_0" style="position:fixed;opacity:0;z-index:-1;width:100%;height:100%;background-color:black"></div>
+    </form>
+    <form>
+        <div id="logbox">
+            <div style="border-bottom: #CDCDCD solid 1px">
+                <a href="#" onclick="out();"><input type="button" style="padding:0 3px;float: right;font-size:30px;background: #FFFFFF;border: #FFFFFF;cursor: pointer" class="material-icons" value="backspace"></a>
+                <h2>TÀI KHOẢO CỦA TÔI</h2>
+            </div>
+            <div style="padding: 40px;border-bottom: #CDCDCD solid 1px">
+                <div id="ttdn">
+                    <div style="font-weight: bold">TÔI ĐÃ CÓ TÀI KHOẢN</div>
+                    <p>Login*<br><input type="text" value="" id="tendn"></p>
+                    <p>Password*<br><input type="password" value="" id="mk"></p>
+                    <div style="margin-right:25px;padding-top: 2px"><a href="#" style="color:black;"><u>Quên mật khẩu?</u></a></div>
+                    <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;display:block;margin-top:20px" onclick="checkttdn()">Đăng nhập</a>
+                </div>
+            </div>
+            <div style="padding:30px 40px">
+                <div style="font-weight: bold">TÔI CHƯA CÓ TÀI KHOẢN</div>
+                <div style="margin-top: 20px;margin-bottom:20px">Tận hưởng các lợi ích bổ sung và trải nghiệm phong phú hơn bằng cách tạo tài khoản cá nhân</div>
+                <div style="text-align: center   ">
+                    <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;display:block" onclick="CreateAccountBoard()">Tạo tài khoản</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form>
+        <div id="logbox_2">
+            <div style="border-bottom: #CDCDCD solid 1px">
+                <a href="#" onclick="out_2();"><input type="button" style="padding:0 3px;float: right;font-size:30px;background: #FFFFFF;border: #FFFFFF;cursor: pointer" class="material-icons" value="backspace"></a>
+                <h2 style="text-align: center;padding: 30px">TRỞ THÀNH MỘT THÀNH VIÊN</h2>
+            </div>
+            <div style="padding: 20px;text-align: center">
+                <p style="padding:20px 0px;">Tạo hồ sơ Thành viên của bạn và có quyền truy cập đầu tiên vào những sản phẩm, nguồn cảm hứng và cộng đồng tốt nhất của chúng tôi.</p>
+                <input id="username" type="text" placeholder="Username*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="password" type="password" placeholder="Password*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="passwordrp" type="password" placeholder="Fill in password again*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="fullname" type="text" placeholder="Full name*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="email" type="text" placeholder="Email address*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="phone" type="text" placeholder="Phone number*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="address" type="text" placeholder="Your Current address*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+            </div>
+            <div style="text-align: center">
+                <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;margin: 30px" onclick="createNewAccount()">Tham gia với chúng tôi</a>
+                <div style="margin-top: 30px">Đã là thành viên chưa?<a style="cursor: pointer;padding:30px 5px;text-decoration: underline;" onclick="dangnhap()">Đăng nhập</a></div>
+            </div>
+        </div>
+    </form>
+    <div id="wrapper">
+        <div id="head">
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">GIAO HÀNG MIỄN PHÍ CHO THÀNH VIÊN</div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">TRẢ LẠI & ĐỔI HÀNG TRONG 60 NGÀY</div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">TẤT CẢ SẢN PHẨM ĐANG ƯU ĐÃI ĐẶC BIỆT </div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">THỜI TRANG</div>
+        </div>
+        <nav class="navbar">
+            <div class="nav">
+                <img scr="" class="brand-logo" alt="" />
+                <div class="nav-items">
+                    <img src="t3n.png" style="position: absolute;height:100px;font-weight:150px;left: 2%" />
+                    <div class="search">
+                        <a href="content.html?1" style="width:600px;margin-right:-150px"><input type="text" class="search-box" placeholder="search brand , products" /></a>
+                        <a href="content.html?1"><button class="search-btn" style="width:100px">search</button></a>
+                    </div>
+                    <a href="content.html?1"><img src="cart.png" alt="" /></a>
+                    <a id="login" href="#"><img src="user.png" alt="" onclick="dangnhap()" /></a>
+                    <div id="tkkh" style="height:50%;color:black;margin-left:20px;margin-right:-50px;font-weight:bold">
+
+                    </div>
+                </div>
+            </div>
+            <div><a id="dxbox" onclick="dangxuat()" href="#" style="display:none;line-height: 15px;padding: 10px 10px;background-color: gray;text-align: center;position:absolute;right:100px;top:50%;border-radius:20px"><b>Đăng xuất</b></a></div>
+
+            <ul class="links-container">
+                <li class="link-item"><a href="DOAN.html" class="link" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">TRANG CHỦ</a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('woman')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">PHỤ NỮ</a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('man')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">ĐÀN ÔNG</a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('kid')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">TRẺ EM</a></li>
+            </ul>
+        </nav>
+        <div>
+            <div style="padding-top: 100px">
+                <div style="text-align: center;font-weight: bold;text-decoration: underline;padding-right: 1150px">LÀM TỪ VẬT LIỆU TÁI CHẾ</div>
+                <div style="text-align: center;font-size: 35px">
+                    <h2>BA CON ĐƯỜNG ĐỊNH HÌNH TƯƠNG LAI CỦA ADIDAS ĐỂ GIÚP KẾT THÚC CHẤT THẢI NHỰA</h2>
+                </div>
+                <div style="text-align: center"><i>Ngày 15 tháng 4 năm 2021</i></div>
+            </div>
+            <div>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/1920x1080/583036_v2.jpg" style="width: 65%;padding: 40px;float: left;clear: both" />
+            </div>
+            <div style="padding: 40px;text-align: center;font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';text-decoration: underline">
+                <p>
+                    <h3>CHÚNG TÔI ĐANG VUI LÒNG</h3>
+                </p>
+            </div>
+            <div style="padding: 15px;text-align: center">
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/582933.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/582862.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/582863.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/400x300/582931.jpg" style="width: 15%;height: 215px" />
+            </div>
+            <div style="font-size: 20px">
+                <p style="width: 65%;padding:40px;text-indent: 50px">CHÚNG TÔI ĐANG VUI LÒNGLƯU Ý TÔI ĐANG VUI LÒNG</p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Ý tưởng của chúng tôi là giúp chấm dứt rác thải nhựa bằng cách phát triển các sản phẩm: sử dụng vật liệu tái chế, được sản xuất để tái chế hoặc được sản xuất từ thiên nhiên. Chúng tôi đang tạo ra những con đường mới để tiến về phía trước trong mỗi làn đường này, làm việc với một nhóm cộng tác viên
+                    từ ngành của chúng tôi và hơn thế nữa, thiết lập tốc độ cho toàn ngành. </p>
+                <p style="padding: 10px 40px;font-weight: bold">Đổi mới vật chất</p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Khi chúng tôi nói được làm bằng vật liệu tái chế, chúng tôi đang nói đến các sản phẩm được làm một phần bằng polyester tái chế hoặc Parley Ocean Plastic - rác thải nhựa tái chế được thu gom trên các bãi biển và cộng đồng ven biển, ngăn không cho nó xâm nhập vào môi trường.
+                    làm ô nhiễm các đại dương. Kể từ năm 2015, chúng tôi đã tạo ra hơn 30 triệu đôi giày bằng Parley Ocean Plastic, một nửa trong số đó được sản xuất chỉ riêng trong năm ngoái. </p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/582934.jpg" style="width: 50%;margin: 80px" />
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Chúng tôi sẽ thực hiện một loạt nhiệm vụ mới cùng với Parley trong vài tháng tới để bảo vệ hệ thống nước trên trái đất, từ đại dương, núi đến sông. Mỗi mục tiêu sẽ nhằm mục đích giáo dục về tác động của ô nhiễm nhựa và hy vọng sẽ truyền cảm hứng cho mọi người
+                    để hành động, đồng thời giúp chúng tôi tập trung vào việc thiết kế các giải pháp. </p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Tương tự như cách hành trình của chúng tôi bắt đầu với Parley for the Oceans, chia sẻ một nguyên mẫu duy nhất với thế giới, chúng tôi sẽ sớm công bố hai nguyên mẫu Parley mới. Chiếc đầu tiên có đế giữa được làm một phần bằng công nghệ Boost tái chế sau sản xuất
+                    chất liệu và phần trên của phần thứ hai chứa chất thải gỗ - nó nằm trên một ý tưởng đế giữa Boost khác được chế tạo một phần bằng nguyên liệu có nguồn gốc thực vật. Cả hai đều được tạo ra bằng quy trình thiết kế thăm dò mới khi chúng tôi tiếp tục tìm ra những giải pháp bền vững hơn
+                    khả năng và lựa chọn thay thế cho polyester nguyên chất. </p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Họ khởi động các đợt giảm giá Ultraboost mới sắp tới, với giày chạy bộ Ultraboost 21 x Parley và Ultraboost DNA x Parley mới được làm bằng lưới đánh cá tái chế sẽ ra mắt trong những tuần tới.</p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">'Sản xuất để làm lại' là sản phẩm được tạo ra để mặc, trả lại cho chúng tôi, nghiền nát và làm lại thành một sản phẩm mới. Sau ba thế hệ nguyên mẫu, chúng tôi sẽ tung ra Ultraboost DNA Madeto Be Remade đầu tiên, được làm từ 100% TPU, trên
+                    Ngày Trái đất 22 tháng 4. Chúng tôi cũng sẽ triển khai trải nghiệm thu hồi mới trong những tháng tới - sau khi UB MTBR của bạn hết, bạn sẽ có thể quét mã QR trên giày hoặc mở ứng dụng adidas để bắt đầu quá trình trả lại và sau đó
+                    chúng tôi sẽ hướng dẫn bạn các bước để trả lại sản phẩm cho chúng tôi. </p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/582933.jpg" style="width: 50%;margin: 80px" />
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Đầu tháng này, chúng tôi đã hoàn tất thử nghiệm beta “Khái niệm FUTURECRAFT.LOOPAnorak”Terrex của chúng tôi với 50 người sáng tạo trên toàn thế giới. Đó là một nguyên mẫu áo khoác biểu diễn được thiết kế để trả lại và sửa sang trang phục mới - chúng tôi đang hướng tới mục tiêu phát hành rộng hơn
+                    vào năm 2022.  </p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px"> Đây mới chỉ là khởi đầu. Chúng tôi cũng đang xây dựng những cách mới để giữ sản phẩm hoạt động lâu hơn thông qua chương trình Infinite Play của mình. Nó sẽ bao gồm các dịch vụ thu hồi sản phẩm, bán lại, cho thuê và đăng ký. Chúng tôi sẽ triển khai chương trình thu hồi trong
+                    Hoa Kỳ vào cuối năm nay và chúng tôi cũng sẽ thử nghiệm chương trình cho thuê các sản phẩm Terrex trong mùa giải tới tại Pháp. </p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Các sản phẩm 'được làm từ thiên nhiên' là trang phục thể thao và dạo phố được làm một phần bằng vật liệu tự nhiên và tái tạo - cung cấp thêm các lựa chọn cải tiến được tạo ra một cách có trách nhiệm với đầu vào dựa trên các nguồn tài nguyên tái tạo. Hôm nay chúng ta
+                    chia sẻ đôi giày đầu tiên của chúng tôi được tạo ra từ rễ nấm dưới lòng đất: Stan Smith Mylo.</p>
+                <p style="width: 65%;padding:10px 40px;text-indent: 50px">Cách tiếp cận đổi mới của chúng tôi luôn là hợp tác với các đối tác, chuyên gia và đôi khi là các đối thủ cạnh tranh có thể thúc đẩy chúng tôi và ngành của chúng tôi tiến lên phía trước. Stan Smith Mylo là kết quả của sự hợp tác với đối tác lâu năm Bolt của chúng tôi
+                    Threads - công ty công nghệ sinh học cam kết tạo ra thế hệ tiếp theo của vật liệu tiên tiến.</p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/582863.jpg" style="width: 50%;margin: 80px" />
+                <p style="width: 65%;padding: 10px 40px;text-indent: 50px">Mylo là chất liệu mềm mại, dẻo dai và chắc chắn. Nó được làm bằng Mycelium có thể tái tạo, được tạo ra bằng quy trình phát triển chỉ mất chưa đầy hai tuần và sử dụng kỹ thuật nông nghiệp thẳng đứng tiên tiến, cho phép nó được trồng trong điều kiện có kiểm soát.
+                    môi trường phòng thí nghiệm làm tăng năng suất trên mỗi foot vuông. </p>
+                <p style="width: 65%;padding: 10px 40px;text-indent: 50px">Chúng tôi vô cùng vui mừng về Mylo và khả năng sáng tạo và đổi mới vật liệu mà nó mang lại. Đây là một chất liệu linh hoạt có thể có bất kỳ màu sắc, lớp hoàn thiện hoặc hình chạm nổi nào, nhưng chúng tôi đã chọn Stan Smith cổ điển làm giày adidas đầu tiên
+                    được Mylo biến đổi, xây dựng dựa trên uy tín của mình như một trong những thương hiệu giày dép mang tính biểu tượng và bền vững nhất của adidas.</p>
+                <p style="padding: 10px 40px;font-weight: bold">Tham gia sứ mệnh giúp chấm dứt rác thải nhựa </p>
+                <p style="width: 65%;padding: 40px;text-indent: 50px">Bên cạnh các khái niệm và sản phẩm mới, sứ mệnh tiếp theo của chúng tôi với Parley bắt đầu trước Ngày Đại dương Thế giới (8 tháng 6), nơi chúng tôi sẽ khai thác sức mạnh của thể thao như một động lực để thay đổi, mời mọi người tham gia “Run For The Oceans” một lần nữa. Kể từ năm 2017,
+                    sáng kiến này đã đoàn kết hơn 3 triệu người chạy bộ trên khắp thế giới, cùng nhau đạt được 25,5 triệu km và quyên góp được 2,5 triệu đô la để giúp Parley phát triển một số sáng kiến và chương trình giáo dục trong cuộc chiến chống lại rác thải nhựa trên biển
+                    sự ô nhiễm. </p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/582932.gif" style="width: 50%;margin: 60px" />
+                <p style="width: 65%;padding: 10px;text-indent: 50px;margin-bottom: 80px">Trao quyền cho các vận động viên chạy bộ trên toàn thế giới để tạo nên sự khác biệt, với mỗi km chạy từ ngày 28 tháng 5 đến ngày 8 tháng 6 thông qua ứng dụng adidas Running, mạng lưới dọn dẹp toàn cầu Parley sẽ dọn sạch trọng lượng tương đương của 10 chai nhựa, tối đa
+                    trong số 500.000 lbs chất thải nhựa biển từ các bãi biển, các hòn đảo xa xôi và bờ biển. Sẽ có nhiều thông tin khác về cách bạn có thể tham gia vào tháng 5 - trong lúc chờ đợi, hãy truy cập adidas.com/runfortheoceans và theo dõi #RFTO trên Twitter hoặc Instagram
+                    cho tất cả những gì mới nhất khi nó xảy ra.</p>
+            </div>
+            <footer id="footer">
+                <div class="footer-content">
+                    <a href="DOAN (1).html"></a>
+                    <div class="sub-heading">Design by T3N SHOP</div>
+                    <div class="slogan">Chasing Your Dream , MAke your own day.</div>
+                    <ul class="footer-social">
+                        <li class="social-media"></li>
+                        <a class="social-popup-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <li class="social-media"></li>
+                        <a class="social-popup-icon" target="_blank" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <li class="social-media"></li>
+                        <a class="social-popup-icon" target="_blank" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </ul>
+                </div>
+                <div class="footer-bottom">Copyright © 2023. All Rights Reserved.</div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

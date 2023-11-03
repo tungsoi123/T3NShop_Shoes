@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Project.css" />
+    <meta charset="utf-8" />
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./vendor/js/Magnific-Popup-master/magnific-popup.css" />
+    <script src="https://kit.fontawesome.com/54a12c09af.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        }
+        
+        #head {
+            width: 100%;
+            height: 30px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #afterhead {
+            width: 100%;
+            height: 120px;
+            border-bottom: #989898 solid 2px;
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            width: 100%;
+            height: 480px;
+            background-image: url(https://static.wixstatic.com/media/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.jpg/v1/fill/w_1899,h_743,al_c,q_85,usm_0.66_1.00_0.01/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.webp);
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        footer .footer-content {
+            padding: 85px 0 70px 0;
+            border-bottom: 1px solid #2e2c2f;
+        }
+        
+        footer .sub-heading {
+            font-size: 20px;
+            line-height: 36px;
+            color: #aaa;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .slogan {
+            color: #aaa;
+            line-height: 34px;
+            font-size: 18px;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .footer-social {
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+        
+        footer .social-media:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+        footer .social-popup-icon {
+            color: #fff;
+        }
+        
+        footer .footer-bottom {
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            color: #aaa;
+        }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100px;
+            background: #ffffff;
+            z-index: 12;
+        }
+        
+        .nav {
+            padding: 3px 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .brand-logo {
+            height: 60px;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search {
+            width: 500px;
+            display: flex;
+        }
+        
+        .search-box {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #d1d1d1;
+            text-transform: capitalize;
+            background: none;
+            color: #a9a9a9;
+            outline: none;
+        }
+        
+        .search-btn {
+            width: 20%;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #383838;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 15px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .search-box::placeholder {
+            color: #a9a9a9;
+        }
+        
+        .nav-items a {
+            margin-left: 20px;
+        }
+        
+        .nav-items a img {
+            width: 30px;
+        }
+        
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 7px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+        
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: 0.5s;
+            font-size: 15px;
+        }
+        
+        .link:hover {
+            opacity: 1;
+        }
+        
+        @media all and (max-width: 1500px) {
+            body {
+                width: 1500px;
+            }
+            .navbar {
+                width: 1500px;
+            }
+        }
+        
+        @media all and (max-width: 1000px) {
+            body {
+                width: 1200px;
+            }
+            .navbar {
+                width: 1200px;
+            }
+            #head {
+                font-size: 10px;
+            }
+        }
+    </style>
+    <script src="Project.js"></script>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            createAdmin();
+            hideTK();
+        };
+    </script>
+    <form>
+        <div id="logbox_0" style="
+          position: fixed;
+          opacity: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-color: black;
+        "></div>
+    </form>
+    <form>
+        <div id="logbox">
+            <div style="border-bottom: #cdcdcd solid 1px">
+                <a href="#" onclick="out();"><input type="button" style="
+                padding: 0 3px;
+                float: right;
+                font-size: 30px;
+                background: #ffffff;
+                border: #ffffff;
+                cursor: pointer;
+              " class="material-icons" value="backspace" /></a>
+                <h2>TÀI KHOẢN CỦA TÔI</h2>
+            </div>
+            <div style="padding: 40px; border-bottom: #cdcdcd solid 1px">
+                <div id="ttdn">
+                    <div style="font-weight: bold">TÔI ĐÃ CÓ TÀI KHOẢN</div>
+                    <p>Login*<br /><input type="text" value="" id="tendn" /></p>
+                    <p>Password*<br /><input type="password" value="" id="mk" /></p>
+                    <div style="margin-right: 25px; padding-top: 2px">
+                        <a href="#" style="color: black"><u>Quên mật khẩu</u></a>
+                    </div>
+                    <a href="#" style="
+                cursor: pointer;
+                font-size: 20px;
+                background-color: black;
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+                display: block;
+                margin-top: 20px;
+              " onclick="checkttdn()">Đăng nhập</a
+            >
+          </div>
+        </div>
+        <div style="padding: 30px 40px">
+          <div style="font-weight: bold">TÔI KHÔNG CÓ TÀI KHOẢN</div>
+          <div style="margin-top: 20px; margin-bottom: 20px">
+            Tận hưởng các lợi ích bổ sung và trải nghiệm phong phú hơn bằng cách tạo
+             tài khoản
+          </div>
+          <div style="text-align: center">
+            <a
+              href="#"
+              style="
+                cursor: pointer;
+                font-size: 20px;
+                background-color: black;
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+                display: block;
+              "
+              onclick="CreateAccountBoard()"
+              >Tạo tài khoản</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+    <form>
+      <div id="logbox_2">
+        <div style="border-bottom: #cdcdcd solid 1px">
+          <a href="#" onclick="out_2();"
+            ><input
+              type="button"
+              style="
+                padding: 0 3px;
+                float: right;
+                font-size: 30px;
+                background: #ffffff;
+                border: #ffffff;
+                cursor: pointer;
+              "
+              class="material-icons"
+              value="backspace"
+          /></a>
+                    <h2 style="text-align: center; padding: 30px">BECOME A MEMBER</h2>
+                </div>
+                <div style="padding: 20px; text-align: center">
+                    <p style="padding: 20px 0px">
+                      Tạo hồ sơ Thành viên của bạn và có quyền truy cập đầu tiên vào những sản phẩm, nguồn cảm hứng và cộng đồng tốt nhất của chúng tôi.
+                    </p>
+                    <input id="username" type="text" placeholder="Username*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="password" type="password" placeholder="Password*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="passwordrp" type="password" placeholder="Fill in password again*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="fullname" type="text" placeholder="Full name*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="email" type="text" placeholder="Email address*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="phone" type="text" placeholder="Phone number*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                    <input id="address" type="text" placeholder="Your Current address*" style="
+              width: 100%;
+              height: 50px;
+              margin: 10px 0px;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 10px;
+            " /><br />
+                </div>
+                <div style="text-align: center">
+                    <a href="#" style="
+              cursor: pointer;
+              font-size: 20px;
+              background-color: black;
+              color: white;
+              padding: 10px 30px;
+              text-align: center;
+              margin: 30px;
+            " onclick="createNewAccount()">Join us</a
+          >
+          <div style="margin-top: 30px">
+            Đã là thành viên chưa?<a
+              style="
+                cursor: pointer;
+                padding: 30px 5px;
+                text-decoration: underline;
+              "
+              onclick="dangnhap()"
+              >Đăng nhập</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="wrapper">
+      <div id="head">
+        <div
+          style="width: 25%; float: left; text-align: center; padding-top: 6px"
+        >
+        GIAO HÀNG MIỄN PHÍ CHO THÀNH VIÊN
+        </div>
+        <div
+          style="width: 25%; float: left; text-align: center; padding-top: 6px"
+        >
+        TRẢ LẠI & ĐỔI HÀNG TRONG 60 NGÀY
+        </div>
+        <div
+          style="width: 25%; float: left; text-align: center; padding-top: 6px"
+        >
+        TẤT CẢ SẢN PHẨM ĐANG ƯU ĐÃI ĐẶC BIỆT
+        </div>
+        <div
+          style="width: 25%; float: left; text-align: center; padding-top: 6px"
+        >
+          THỜI TRANG
+        </div>
+      </div>
+      <nav class="navbar">
+        <div class="nav">
+          <img scr="t3n.png" class="brand-logo" alt="" />
+          <div class="nav-items">
+            <img
+              src="t3n.png"
+              style="position: absolute; height: 100px; font-weight: 150px; left: 2%"
+            />
+            <div class="search">
+              <a
+                href="content.html?1"
+                style="width: 600px; margin-right: -150px"
+                ><input
+                  type="text"
+                  class="search-box"
+                  placeholder="search brand , products"
+              /></a>
+                    <a href="content.html?1"><button class="search-btn" style="width: 100px">
+                  Tìm kiếm
+                </button></a
+              >
+            </div>
+            <a href="content.html?1"><img src="cart.png" alt="" /></a>
+                    <a id="login" href="#"><img src="user.png" alt="" onclick="dangnhap()" /></a>
+                    <div id="tkkh" style="
+                height: 50%;
+                color: black;
+                margin-left: 20px;
+                margin-right: -50px;
+                font-weight: bold;
+              "></div>
+                </div>
+            </div>
+            <div>
+                <a id="dxbox" onclick="dangxuat()" href="#" style="
+              display: none;
+              line-height: 15px;
+              padding: 10px 10px;
+              background-color: gray;
+              text-align: center;
+              position: absolute;
+              right: 100px;
+              top: 50%;
+              border-radius: 20px;
+            "><b>Đăng xuất</b></a
+          >
+        </div>
+
+        <ul class="links-container">
+          <li class="link-item">
+            <a
+              href="DOAN.html"
+              class="link"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >TRANG CHỦ</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="content.html?1"
+              class="link"
+              onclick="gender('woman')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >PHỤ NỮ</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="content.html?1"
+              class="link"
+              onclick="gender('man')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >ĐÀN ÔNG</a
+            >
+          </li>
+          <li class="link-item">
+            <a
+              href="content.html?1"
+              class="link"
+              onclick="gender('kid')"
+              style="
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+              "
+              >TRẺ EM</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <div style="padding-top: 100px">
+          <div
+            style="
+              text-align: center;
+              font-weight: bold;
+              text-decoration: underline;
+              padding-right: 1250px;
+            "
+          >
+            CÔNG TY
+          </div>
+          <div style="text-align: center; font-size: 35px">
+            <h2>NIKE, Inc. Báo cáo kết quả quý đầu tiên năm tài chính 2023</h2>
+          </div>
+          <div style="text-align: center"><i>October 4, 2023</i></div>
+          <p style="padding: 40px 120px; font-size: 30px; text-indent: 50px">
+            BEAVERTON, Ore., ngày 23 tháng 9 năm 2021 - NIKE, Inc. (NYSE:NKE) hôm nay
+             báo cáo kết quả tài chính năm tài chính 2022 cho quý đầu tiên kết thúc
+             Ngày 31 tháng 8 năm 2021
+          </p>
+          <ul style="padding: 40px 200px; font-size: 30px">
+            <li>
+              Doanh thu báo cáo quý đầu tiên là 12,2 tỷ USD, tăng 16%
+               so với năm trước và tăng 12% trên cơ sở trung lập tiền tệ
+               nền tảng.*
+            </li>
+            <li>
+              Doanh thu trực tiếp của NIKE đạt 4,7 tỷ USD, tăng 28% so với báo cáo
+              cơ bản và tăng 25% trên cơ sở trung lập về tiền tệ.            </li>
+            <li>
+              Doanh số bán hàng của NIKE Brand Digital tăng 29% hay 25% so với cùng kỳ
+              cơ sở trung lập về tiền tệ.
+            </li>
+            <li>Tỷ suất lợi nhuận gộp tăng 170 điểm cơ bản lên 46,5%.</li>
+            <li>
+              Thu nhập suy giảm trên mỗi cổ phiếu trong quý là 1,16 USD, tăng 22
+              phần trăm.
+            </li>
+          </ul>
+          <p style="padding: 40px 120px; font-size: 30px; text-indent: 50px">
+            “Kết quả khả quan của NIKE trong quý này tiếp tục là bằng chứng cho sự phát triển sâu sắc của chúng tôi.
+             kết nối người tiêu dùng, đường dẫn đổi mới không ngừng và kỹ thuật số
+             lợi thế thúc đẩy động lực thương hiệu của chúng tôi,” John Donahoe cho biết,
+             Chủ tịch và Giám đốc điều hành của NIKE, Inc. “Chúng tôi có chiến lược phù hợp để
+             điều hướng các động lực kinh tế vĩ mô, khi chúng tôi tạo ra giá trị thông qua
+             nỗ lực không ngừng để thúc đẩy tương lai của thể thao.”*
+          </p>
+          <p style="padding: 40px 120px; font-size: 30px; text-indent: 50px">
+            B Doanh thu quý I tăng 12%, trên cơ sở trung lập về tiền tệ
+            cơ bản, với sự tăng trưởng trên tất cả các kênh, dẫn đầu bởi sự tăng trưởng của NIKE Direct về
+            25 phần trăm. Đóng góp vào sự tăng trưởng của NIKE Direct là sự ổn định
+            bình thường hóa hoạt động bán lẻ thực tế thuộc sở hữu, tăng 24%,
+            vượt mức trước đại dịch kể từ quý đầu tiên của năm tài chính 2020.
+            Hoạt động kinh doanh Kỹ thuật số của NIKE Brand tiếp tục tăng trưởng mạnh mẽ, tăng thêm
+            25%, dẫn đầu là Bắc Mỹ tăng trưởng 43%.
+          </p>
+          <p style="padding: 40px 120px; font-size: 30px; text-indent: 50px">
+            “NIKE là một công ty tăng trưởng với cơ hội thị trường lớn như
+             chưa từng có,” Matt Friend, Phó chủ tịch điều hành kiêm Giám đốc
+             Giám đốc Tài chính, NIKE, Inc. “Kết quả Q1 của chúng tôi minh họa cách NIKE
+             Chiến lược tăng tốc tiêu dùng trực tiếp tiếp tục thúc đẩy tăng trưởng và
+             chuyển đổi mô hình tài chính dài hạn của chúng tôi.”**
+          </p>
+          <p style="padding: 40px 120px; font-size: 35px; font-weight: bold">
+            Xem xét báo cáo thu nhập quý đầu tiên
+          </p>
+          <ul style="padding: 50px 200px; font-size: 30px">
+            <li>
+              Doanh thu của NIKE, Inc. tăng 16% lên 12,2 tỷ USD
+              so với năm trước, tăng 12 phần trăm trên một loại tiền tệ trung lập
+              nền tảng.
+            </li>
+            <li>
+              Doanh thu của Thương hiệu NIKE là 11,6 tỷ USD, tăng 12
+               phần trăm so với năm trước trên cơ sở trung lập về tiền tệ, dẫn đầu là NIKE
+               Tăng trưởng hai con số trực tiếp ở Bắc Mỹ, APLA và EMEA.
+            </li>
+            <li>
+              Doanh thu của Converse là 629 triệu USD, tăng 7% so với cùng kỳ năm ngoái.
+               cơ sở trung lập về tiền tệ, dẫn đầu bởi hiệu suất trong Trực tiếp tới người tiêu dùng
+               ở cả Bắc Mỹ và Châu Âu.
+            </li>
+            <li>
+              Biên lãi gộp tăng 170 điểm cơ bản lên 46,5%, dẫn đầu là
+               mở rộng lợi nhuận trong hoạt động kinh doanh NIKE Direct của chúng tôi, sự kết hợp cao hơn giữa
+               bán nguyên giá và thay đổi thuận lợi về ngoại tệ
+               tỷ giá hối đoái, được bù đắp một phần bởi giá thành sản phẩm cao hơn, chủ yếu
+               do chi phí vận chuyển tăng.
+            </li>
+            <li>
+              Chi phí bán hàng và quản lý tăng 20% lên 3,6 USD
+              tỷ.
+            </li>
+            <li>
+              Chi phí tạo ra nhu cầu là 918 triệu USD, tăng 36%, chủ yếu
+              do việc bình thường hóa chi tiêu cho các chiến dịch thương hiệu khi chúng tôi
+              hàng năm đóng cửa thị trường trong năm trước, cũng như
+              tiếp tục đầu tư vào tiếp thị kỹ thuật số để hỗ trợ nâng cao
+              nhu cầu kỹ thuật số.
+            </li>
+            <li>
+              Chi phí hoạt động chung tăng 15% lên 2,7 tỷ USD,
+               chủ yếu là do sự gia tăng các chi phí liên quan đến tiền lương, cao hơn
+               đầu tư công nghệ chiến lược và chi phí biến đổi trực tiếp của NIKE.
+            </li>
+            <li>
+              Thuế suất hiệu dụng trong quý là 11,0% so với
+               lên 11,5% so với cùng kỳ năm ngoái do tăng
+               lợi ích từ việc bồi thường dựa trên hàng tồn kho và các khoản mục riêng biệt, bù đắp
+               bởi sự thay đổi trong cơ cấu thu nhập của chúng tôi.
+            </li>
+            <li>
+              Thu nhập ròng là 1,9 tỷ USD, tăng 23% và Thu nhập bị pha loãng
+               trên mỗi cổ phiếu là 1,16 USD, tăng 22%.
+            </li>
+          </ul>
+          <p style="padding: 40px 120px; font-size: 35px; font-weight: bold">
+            Ngày 31 tháng 8 năm 2021 Xem xét Bảng cân đối kế toán
+          </p>
+          <ul style="padding: 50px 200px; font-size: 30px">
+            <li>
+              hàng tồn kho của NIKE, Inc. là 6,7 tỷ USD, không thay đổi so với
+               cùng kỳ năm trước, được thúc đẩy bởi nhu cầu tiêu dùng mạnh mẽ trong thời gian
+               quý, được bù đắp bằng lượng hàng tồn kho đang vận chuyển tăng cao do thời gian kéo dài
+               thời gian giao hàng do sự gián đoạn chuỗi cung ứng đang diễn ra.
+            </li>
+            <li>
+              Tiền và các khoản tương đương và đầu tư ngắn hạn là 13,7 USD
+               tỷ USD, tăng khoảng 4,2 tỷ USD so với năm ngoái, do
+               tạo ra dòng tiền tự do mạnh mẽ, được bù đắp một phần bằng tiền mặt
+               cổ tức và mua lại cổ phần.
+            </li>
+          </ul>
+          <p style="padding: 40px 120px; font-size: 35px; font-weight: bold">
+            Lợi nhuận của cổ đông
+          </p>
+          <p style="padding: 40px 120px; font-size: 30px; text-indent: 50px">
+            NIKE tiếp tục có thành tích tốt trong việc đầu tư vào nhiên liệu
+            tăng trưởng và tăng lợi nhuận liên tục cho các cổ đông,
+            trong đó có 19 năm liên tiếp trả cổ tức ngày càng tăng. TRONG
+            quý đầu tiên, NIKE đã thu về khoảng 1,2 tỷ USD
+            cổ đông, bao gồm:
+          </p>
+          <ul style="padding: 10px 200px; font-size: 30px">
+            <li>
+              Cổ tức là 435 triệu USD, tăng 13% so với năm trước.            </li>
+            <li>
+              Việc mua lại cổ phiếu trị giá 742 triệu USD trong quý, phản ánh mức 4,8
+               triệu cổ phiếu đã ngừng hoạt động trong thời hạn 4 năm trị giá 15 tỷ USD
+               chương trình đã được Hội đồng quản trị phê duyệt vào tháng 6 năm 2018. Kể từ
+               Tính đến ngày 31 tháng 8 năm 2021, tổng cộng 54,8 triệu cổ phiếu đã được bán
+               được mua lại theo chương trình với tổng số tiền khoảng $5,4
+               tỷ.
+            </li>
+          </ul>
+          <p style="padding: 40px 120px; font-size: 35px; font-weight: bold">
+            Cuộc gọi hội nghị
+          </p>
+          <div
+            style="
+              background: #919191;
+              padding: 40px 40px;
+              margin: 100px 300px;
+              font-size: 20px;
+            "
+          >
+            <i>Giới thiệu về NIKE, Inc.</i><br />
+            <i
+            >NIKE, Inc., có trụ sở gần Beaverton, Oregon, là công ty hàng đầu thế giới
+            nhà thiết kế, tiếp thị và phân phối giày thể thao đích thực,
+            quần áo, thiết bị và phụ kiện cho nhiều môn thể thao
+            và các hoạt động thể dục. Converse, một công ty NIKE, Inc.
+            thương hiệu phụ, thiết kế, tiếp thị và phân phối các sản phẩm thể thao
+            giày dép, quần áo và phụ kiện phong cách sống. Để biết thêm thông tin,
+            Các bản công bố thu nhập và thông tin tài chính khác của NIKE, Inc.
+            có sẵn trên Internet tại http://investor.nike.com.
+            Các cá nhân cũng có thể truy cập http://news.nike.com và theo dõi
+            @NIKE.</i
+            >
+          </div>
+          <div
+            style="
+              background: #919191;
+              padding: 40px 40px;
+              margin: 100px 300px;
+              font-size: 20px;
+            "
+          >
+            <i>
+            * Xem thêm thông tin ở phần đính kèm
+            Bảng doanh thu liên quan đến biện pháp tài chính phi GAAP này.</i
+            ><br />
+            <i
+              >** Các đoạn được đánh dấu chứa các tuyên bố hướng tới tương lai
+              liên quan đến những rủi ro và sự không chắc chắn có thể khiến kết quả thực tế bị ảnh hưởng
+              khác nhau về mặt vật chất. Những rủi ro và sự không chắc chắn này được trình bày chi tiết từ
+              theo thời gian trong các báo cáo do NIKE nộp cho Cục Chứng khoán Hoa Kỳ và
+              Ủy ban trao đổi (SEC), bao gồm các Mẫu 8-K, 10-Q và 10-K.</i
+            >
+          </div>
+        </div>
+        <footer id="footer">
+          <div class="footer-content">
+            <a href="DOAN (1).html"></a>
+                <div class="sub-heading">Design by T3N SHOP</div>
+                <div class="slogan">Theo đuổi ước mơ, tạo nên một ngày của riêng bạn.</div>
+                <ul class="footer-social">
+                    <li class="social-media"></li>
+                    <a class="social-popup-icon" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <li class="social-media"></li>
+                    <a class="social-popup-icon" target="_blank" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <li class="social-media"></li>
+                    <a class="social-popup-icon" target="_blank" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                Copyright © 2023. All Rights Reserved.
+            </div>
+            </footer>
+        </div>
+        </div>
+</body>
+
+</html>

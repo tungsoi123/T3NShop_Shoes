@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Project.css">
+    <meta charset="utf-8" />
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./vendor/js/Magnific-Popup-master/magnific-popup.css" />
+    <script src="https://kit.fontawesome.com/54a12c09af.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        }
+        
+        #head {
+            width: 100%;
+            height: 30px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #afterhead {
+            width: 100%;
+            height: 120px;
+            border-bottom: #989898 solid 2px;
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            width: 100%;
+            height: 480px;
+            background-image: url(https://static.wixstatic.com/media/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.jpg/v1/fill/w_1899,h_743,al_c,q_85,usm_0.66_1.00_0.01/ea71bb_4f6381151e9b431f82c1210950ca5873~mv2.webp);
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        footer .footer-content {
+            padding: 85px 0 70px 0;
+            border-bottom: 1px solid #2e2c2f;
+        }
+        
+        footer .sub-heading {
+            font-size: 20px;
+            line-height: 36px;
+            color: #aaa;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .slogan {
+            color: #aaa;
+            line-height: 34px;
+            font-size: 18px;
+            letter-spacing: 0.7px;
+        }
+        
+        footer .footer-social {
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+        
+        footer .social-media:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+        footer .social-popup-icon {
+            color: #fff;
+        }
+        
+        footer .footer-bottom {
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            color: #aaa;
+        }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100px;
+            background: #FFFFFF;
+            z-index: 12;
+        }
+        
+        @media all and (max-width: 1500px) {
+            body {
+                width: 1500px;
+            }
+            .navbar {
+                width: 1500px;
+            }
+        }
+        
+        @media all and (max-width: 1000px) {
+            body {
+                width: 1200px;
+            }
+            .navbar {
+                width: 1200px;
+            }
+            #head {
+                font-size: 10px;
+            }
+        }
+        
+        .nav {
+            padding: 3px 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .brand-logo {
+            height: 60px;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search {
+            width: 500px;
+            display: flex;
+        }
+        
+        .search-box {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #d1d1d1;
+            text-transform: capitalize;
+            background: none;
+            color: #a9a9a9;
+            outline: none;
+        }
+        
+        .search-btn {
+            width: 20%;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #383838;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 15px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .search-box::placeholder {
+            color: #a9a9a9;
+        }
+        
+        .nav-items a {
+            margin-left: 20px;
+        }
+        
+        .nav-items a img {
+            width: 30px;
+        }
+        
+        .links-container {
+            width: 100%;
+            display: flex;
+            padding: 7px 10vw;
+            justify-content: center;
+            list-style: none;
+            border-top: 1px solid #d1d1d1;
+        }
+        
+        .link {
+            text-transform: capitalize;
+            padding: 0 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #383838;
+            opacity: 0.5;
+            transition: 0.5s;
+            font-size: 15px;
+        }
+        
+        .link:hover {
+            opacity: 1;
+        }
+    </style>
+    <script src="Project.js">
+    </script>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            createAdmin();
+            hideTK();
+        }
+    </script>
+    <form>
+        <div id="logbox_0" style="position:fixed;opacity:0;z-index:-1;width:100%;height:100%;background-color:black"></div>
+    </form>
+    <form>
+        <div id="logbox">
+            <div style="border-bottom: #CDCDCD solid 1px">
+                <a href="#" onclick="out();"><input type="button" style="padding:0 3px;float: right;font-size:30px;background: #FFFFFF;border: #FFFFFF;cursor: pointer" class="material-icons" value="backspace"></a>
+                <h2>TÀI KHOẢN CỦA TÔI</h2>
+            </div>
+            <div style="padding: 40px;border-bottom: #CDCDCD solid 1px">
+                <div id="ttdn">
+                    <div style="font-weight: bold">TÔI ĐÃ CÓ TÀI KHOẢN</div>
+                    <p>Login*<br><input type="text" value="" id="tendn"></p>
+                    <p>Password*<br><input type="password" value="" id="mk"></p>
+                    <div style="margin-right:25px;padding-top: 2px"><a href="#" style="color:black;"><u>Quên mật khẩu?</u></a></div>
+                    <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;display:block;margin-top:20px" onclick="checkttdn()">Đăng nhập</a>
+                </div>
+            </div>
+            <div style="padding:30px 40px">
+                <div style="font-weight: bold">TÔI CHƯA CÓ TÀI KHOẢN </div>
+                <div style="margin-top: 20px;margin-bottom:20px">Tận hưởng các lợi ích bổ sung và trải nghiệm phong phú hơn bằng cách tạo tài khoản cá nhân</div>
+                <div style="text-align: center   ">
+                    <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;display:block" onclick="CreateAccountBoard()">Create an Account</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form>
+        <div id="logbox_2">
+            <div style="border-bottom: #CDCDCD solid 1px">
+                <a href="#" onclick="out_2();"><input type="button" style="padding:0 3px;float: right;font-size:30px;background: #FFFFFF;border: #FFFFFF;cursor: pointer" class="material-icons" value="backspace"></a>
+                <h2 style="text-align: center;padding: 30px">TRỞ THÀNH MỘT THÀNH VIÊN</h2>
+            </div>
+            <div style="padding: 20px;text-align: center">
+                <p style="padding:20px 0px;">Tạo hồ sơ Thành viên của bạn và có quyền truy cập đầu tiên vào những sản phẩm, nguồn cảm hứng và cộng đồng tốt nhất của chúng tôi.</p>
+                <input id="username" type="text" placeholder="Username*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="password" type="password" placeholder="Password*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="passwordrp" type="password" placeholder="Fill in password again*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="fullname" type="text" placeholder="Full name*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="email" type="text" placeholder="Email address*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="phone" type="text" placeholder="Phone number*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+                <input id="address" type="text" placeholder="Your Current address*" style="width: 100%;height: 50px;margin: 10px 0px;font-weight: bold;font-size: 15px;padding: 10px" /><br>
+            </div>
+            <div style="text-align: center">
+                <a href="#" style="cursor: pointer;font-size:20px;background-color:black;color:white;padding:10px 30px;text-align: center;margin: 30px" onclick="createNewAccount()">Join us</a>
+                <div style="margin-top: 30px">Đã là thành viên chưa?<a style="cursor: pointer;padding:30px 5px;text-decoration: underline;" onclick="dangnhap()">Sign in</a></div>
+            </div>
+        </div>
+    </form>
+    <div id="wrapper">
+        <div id="head">
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">GIAO HÀNG MIỄN PHÍ CHO THÀNH VIÊN</div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">TRẢ LẠI & ĐỔI HÀNG TRONG 60 NGÀY</div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">TẤT CẢ SẢN PHẨM ĐANG ƯU ĐÃI ĐẶC BIỆT </div>
+            <div style="width: 25%;float: left;text-align: center;padding-top: 6px;">THỜI TRANG</div>
+        </div>
+        <nav class="navbar">
+            <div class="nav">
+                <img scr="" class="brand-logo" alt="" />
+                <div class="nav-items">
+                    <img src="t3n.png" style="position: absolute;height:100px;font-weight:150px;left: 2%" />
+                    <div class="search">
+                        <a href="content.html?1" style="width:600px;margin-right:-150px"><input type="text" class="search-box" placeholder="search brand , products" /></a>
+                        <a href="content.html?1"><button class="search-btn" style="width:100px">tìm kiếm</button></a>
+                    </div>
+                    <a href="content.html?1"><img src="cart.png" alt="" /></a>
+                    <a id="login" href="#"><img src="user.png" alt="" onclick="dangnhap()" /></a>
+                    <div id="tkkh" style="height:50%;color:black;margin-left:20px;margin-right:-50px;font-weight:bold">
+
+                    </div>
+                </div>
+            </div>
+            <div><a id="dxbox" onclick="dangxuat()" href="#" style="display:none;line-height: 15px;padding: 10px 10px;background-color: gray;text-align: center;position:absolute;right:100px;top:50%;border-radius:20px"><b>Đăng xuất</b></a></div>
+
+            <ul class="links-container">
+                <li class="link-item"><a href="DOAN.html" class="link" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">TRANG CHỦ</a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('woman')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">PHỤ NỮ </a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('man')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">ĐÀN ÔNG</a></li>
+                <li class="link-item"><a href="content.html?1" class="link" onclick="gender('kid')" style="font-weight:bold;font-size:15px;margin-left:20px;margin-right:20px">TRẺ EM</a></li>
+            </ul>
+        </nav>
+        <div>
+            <div style="padding-top: 100px">
+                <div style="text-align: center;font-weight: bold;text-decoration: underline;padding-right: 1150px">LÀM TỪ VẬT LIỆU TÁI CHẾ</div>
+                <div style="text-align: center;font-size: 35px">
+                    <h2>ĐỔI MỚI SINH THÁI VỚI PARLEY VÀ REBO TRONG CUỘC CHIẾN CHỐNG Ô NHIỄM NHỰA BIỂN</h2>
+                </div>
+                <div style="text-align: center"><i>Ngày 3 tháng 6 năm 2021</i></div>
+            </div>
+            <div>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/920x690/585892.jpg" style="width: 65%;padding: 40px;float: left;clear: both" />
+            </div>
+            <div style="padding: 40px;text-align: center;font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';text-decoration: underline">
+                <p>
+                    <h3>CHÚNG TÔI ĐANG VUI LÒNG</h3>
+                </p>
+            </div>
+            <div style="padding: 40px;text-align: center">
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/585894.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/585895.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/400x300/585896_v3.jpg" style="width: 15%;height: 215px" />
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/585893.jpg" style="width: 15%;height: 215px" />
+            </div>
+            <div style="font-size: 20px">
+                <p style="width: 65%;padding: 40px;text-indent: 50px">Năm nay sẽ đánh dấu năm thứ tư của adidas x Parley Run for the Oceans. Tính đến nay, adidas x Parley Run for the Oceans đã quy tụ hơn 3 triệu người chạy bộ trên khắp thế giới, cùng nhau đạt được 25,5 triệu KM và quyên góp được 2,5 triệu đô la
+                    để giúp Parley phát triển các sáng kiến và chương trình giáo dục trong cuộc chiến chống ô nhiễm nhựa biển. Năm 2019, 92 trường học đã đăng ký tham gia chương trình và hiện là trung tâm giáo dục, đồng thời là điểm chặn rác nhựa cho học sinh.
+                    cộng đồng địa phương. Kết quả là có 70.000 trẻ em và gia đình các em đã tham gia chương trình.</p>
+                <p style="width: 65%;padding: 40px;font-weight: bold;font-size: 30px">"Là một thương hiệu toàn cầu và là công dân toàn cầu, chúng tôi có vai trò lớn trong việc bảo tồn đại dương và hành tinh của chúng tôi. trách nhiệm của chúng tôi là sử dụng nền tảng, sản phẩm và tiếng nói của chúng tôi để không chỉ nâng cao nhận thức mà còn phát huy hiệu quả THỰC TẾ
+                    HOẠT ĐỘNG."</p>
+                <p style="width: 65%;padding: 40px;text-indent: 50px">Một lần nữa, trao quyền cho các vận động viên chạy bộ trên toàn thế giới để tạo nên sự khác biệt, với mỗi km chạy từ ngày 28 tháng 5 đến ngày 8 tháng 6 thông qua ứng dụng adidas Running (Strava/Joyrun), cùng với Parley, chúng tôi sẽ dọn sạch trọng lượng tương đương của 10 chai nhựa,
+                    lên tới tối đa 500.000 lbs chất thải nhựa biển từ các bãi biển, đảo xa và bờ biển.</p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/585893.jpg" style="width: 50%;margin: 80px" />
+                <p style="width: 65%;padding: 40px;font-weight: bold;font-size: 30px">"HƠN MỘT ĐỐI TÁC, ADIDAS ĐÃ LÀ MỘT ĐỒNG MINH THỰC SỰ, THÀNH VIÊN GIA ĐÌNH MÀ CHÚNG TÔI CẦN THIẾT CẦN Ở BÊN MÌNH ĐỂ CHỨNG MINH RẰNG NGÀNH CÔNG NGHIỆP CÓ THỂ LÀ CHÌA KHÓA GIÚP QUY MÔ VÀ TĂNG TỐC GIẢI PHÁP CHO CÁC VẤN ĐỀ MÔI TRƯỜNG LỚN MÀ CHÚNG TÔI GẶP ĐẶT.</p>
+                <p style="width: 65%;padding: 40px;font-weight: bold;font-size: 30px">CHÚNG TÔI TIN RẰNG HỢP TÁC, SÁNG TẠO VÀ ĐỔI MỚI SINH THÁI LÀ CÔNG THỨC CHIẾN THẮNG ĐỂ CỨU ĐẠI DƯƠNG CỦA CHÚNG TA VÀ CHẤM DỨT KHỦNG HOẢNG NHỰA TOÀN CẦU Đe dọa THẾ GIỚI TỰ NHIÊN, SỨC KHỎE CỦA CHÚNG TA VÀ TƯƠNG LAI CỦA CHÚNG TA. MỌI NGƯỜI THAM GIA CHẠY GIÚP LÁI XE
+                    TẦM NHÌN NÀY TỚI TRƯỚC."</p>
+                <p style="width: 65%;padding: 40px;text-indent: 50px">Và bây giờ, lần đầu tiên, nhân rộng sáng kiến này sau ngày 8 tháng 6, chúng tôi và Parley đã hợp tác với REBO để giới thiệu chai nước thông minh adidas x REBO phiên bản giới hạn trong cuộc chiến không ngừng nghỉ của chúng tôi nhằm giúp chấm dứt rác thải nhựa.</p>
+                <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/640x480/585896_v3.jpg" style="width: 50%;margin: 80px" />
+                <p style="width: 65%;padding: 40px;text-indent: 50px">Công nghệ kết nối của REBO được nhúng trong nắp theo dõi lượng nước bạn uống, chai nhựa tránh sử dụng và cấp tín dụng nhựa để thanh toán chi phí thu gom chai nhựa bị vứt đi. 1 chai say = 1 chai nhựa thu về.
+                    Ứng dụng REBO được đồng bộ hóa với ứng dụng Runtastic Adidas Running để tự động đề xuất nhu cầu hydrat hóa tối ưu. Chi phí thu gom nhựa do REBO và các nhà tài trợ của REBO thanh toán và được chuyển đến Mạng lưới Dọn dẹp Toàn cầu Parley, một liên minh của
+                    các tổ chức hợp tác loại bỏ rác thải nhựa khỏi các bãi biển, đảo xa, sông, rừng ngập mặn ở các cộng đồng ven biển.</p>
+                <p style="width: 65%;padding: 40px;font-weight: bold;font-size: 30px">"Chúng ta sắp hết thời gian để xoay chuyển tình thế về rác thải nhựa và công nghệ có thể giúp thay đổi lộ trình.</p>
+                <p style="width: 65%;padding: 40px;font-weight: bold;font-size: 30px;margin-bottom: 100px">MỖI LẦN NHƯỢC ĐỂ GIỮ NƯỚC ĐÓNG GÓP LÀM SẠCH THẾ GIỚI KHỎI RÁC THẢI NHỰA. THAM GIA CHẠY VÌ ĐẠI DƯƠNG VÀ CUỘC CÁCH MẠNG THỦY LỰC."</p>
+            </div>
+            <footer id="footer">
+                <div class="footer-content">
+                    <a href="DOAN (1).html"></a>
+                    <div class="sub-heading">Design by T3N</div>
+                    <div class="slogan">Chasing Your Dream , MAke your own day.</div>
+                    <ul class="footer-social">
+                        <li class="social-media"></li>
+                        <a class="social-popup-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <li class="social-media"></li>
+                        <a class="social-popup-icon" target="_blank" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <li class="social-media"></li>
+                        
+                        <a class="social-popup-icon" target="_blank" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </ul>
+                </div>
+                <div class="footer-bottom">Copyright © 2023. All Rights Reserved.</div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
